@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import Sidebar from "@/components/Sidebar";
 import ProductGrid from "@/components/ProductGrid";
 
+import { products , categories } from "@/data/products";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-100">
@@ -10,11 +12,11 @@ export default function Home() {
 
       <div className="max-w-7xl mx-auto flex gap-6 p-6">
         <div className="w-1/4"> {/* 1/4th of width */}
-          <Sidebar/>
+          <Sidebar categories={categories}/>
         </div>
 
         <div className="flex-1"> {/* remaining space */}
-          <ProductGrid/>
+          <ProductGrid products = {products}/>
         </div>
       </div>
 

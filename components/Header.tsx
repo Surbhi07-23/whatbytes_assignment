@@ -17,7 +17,7 @@ export default function Header(){
                     />
                 </div>
 
-                <button className="flex items-center bg-blue-900 px-5 py-2 rounded-md hover:bg-blue-800 transition">
+                <button className="flex items-center bg-blue-900 px-5 py-2 rounded-md hover:bg-blue-800 hover:cursor-pointer transition">
                     <ShoppingCart/>
                     Cart
                 </button>
