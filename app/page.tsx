@@ -9,11 +9,11 @@ export default function Home() {
       <Header/>
 
       <div className="max-w-7xl mx-auto flex gap-6 p-6">
-        <div className="w-1/4"> // 1/4th of width
+        <div className="w-1/4"> {/* 1/4th of width */}
           <Sidebar/>
         </div>
 
-        <div className="flex-1"> // remaining space
+        <div className="flex-1"> {/* remaining space */}
           <ProductGrid/>
         </div>
       </div>
