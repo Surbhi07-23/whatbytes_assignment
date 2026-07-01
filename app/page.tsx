@@ -1,7 +1,7 @@
 import Header from "@/components/Header"; 
 import Footer from "@/components/Footer";
 import Sidebar from "@/components/Sidebar";
-import ProductGrid from "@/components/ProductGrid";
+import ProductGrid from "@/components/ProductCard";
 
 import { products , categories } from "@/data/products";
 
