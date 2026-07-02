@@ -1,3 +1,7 @@
+"use client";
+import { useState } from "react";
+import { useCart } from "@/context/CartContext";
+
 import { notFound } from "next/navigation";
 import { Star } from "lucide-react";
 import { products } from "@/data/products";
@@ -9,6 +13,8 @@ interface Props {
 }
 
 export default async function ProductDetails({ params }: Props) {
+  const { addToCart } = useCart();
+  const [quantity, setQuantity] = useState(1);
   const { id } = await params;
 
   const product = products.find(
@@ -57,9 +63,34 @@ export default async function ProductDetails({ params }: Props) {
             {product.description}
           </p>
 
-          <button className="mt-8 bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800">
-            Add to Cart
+          <div className="mt-8 flex items-center gap-4">
+          <button
+            onClick={() => setQuantity(Math.max(1, quantity - 1))}
+            className="w-10 h-10 rounded bg-gray-200"
+          >
+            -
           </button>
+
+          <span className="text-xl font-semibold">{quantity}</span>
+
+          <button
+            onClick={() => setQuantity(quantity + 1)}
+            className="w-10 h-10 rounded bg-gray-200"
+          >
+            +
+        </button>
+
+            <button
+              onClick={() => {
+                for (let i = 0; i < quantity; i++) {
+                  addToCart(product);
+                }
+              }}
+                className="bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800"
+            >
+              Add to Cart
+            </button>
+          </div>
         </div>
       </div>
     </main>
