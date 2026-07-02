@@ -18,7 +18,7 @@ export default function Header({
           Logo
         </h1>
 
-        <div className="flex items-center bg-blue-600 rounded-md px-3 py-2 w-[420px]">
+        <div className="flex items-center bg-blue-600 rounded-md px-3 py-2 w-105">
           <Search size={18} className="mr-2" />
 
           <input

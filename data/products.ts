@@ -52,7 +52,7 @@ export const products = [
     rating: 4.2,
     description:
       "Classic UV-protective sunglasses with a lightweigh frame.",
-    image: "https://picsum.photos/seed/sunglasses/600/600",
+    image: "https://img.magnific.com/free-psd/elegant-black-gold-sunglasses-stylish-accessory_191095-79382.jpg?semt=ais_hybrid&w=740&q=80",
   },
   {
     id: 6,
