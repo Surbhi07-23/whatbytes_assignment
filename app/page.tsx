@@ -1,6 +1,7 @@
 "use client";
+
 import { useEffect, useMemo, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 import Header from "@/HomePage/Header";
 import Footer from "@/HomePage/Footer";
@@ -11,38 +12,30 @@ import { products, categories } from "@/data/products";
 
 export default function Home() {
   const router = useRouter();
-  const searchParams = useSearchParams();
 
-  const [search, setSearch] = useState(
-    searchParams.get("search") || ""
-  );
-
-  const [category, setCategory] = useState(
-    searchParams.get("category") || "All"
-  );
-
-  const [price, setPrice] = useState(
-    Number(searchParams.get("price")) || 1000
-  );
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("All");
+  const [price, setPrice] = useState(1000);
 
   useEffect(() => {
-      const params = new URLSearchParams();
+    const params = new URLSearchParams();
 
-      if (search) {
-        params.set("search", search);
-      }
+    if (search.trim()) {
+      params.set("search", search);
+    }
 
-      if (category !== "All") {
-        params.set("category", category);
-      }
+    if (category !== "All") {
+      params.set("category", category);
+    }
 
-      if (price !== 1000) {
-        params.set("price", price.toString());
-      }
+    if (price !== 1000) {
+      params.set("price", price.toString());
+    }
 
-      router.replace(`/?${params.toString()}`);
-    }, [search, category, price, router]
-  );
+    const query = params.toString();
+
+    router.replace(query ? `/?${query}` : "/");
+  }, [search, category, price, router]);
 
   const filteredProducts = useMemo(() => {
     return products.filter((product) => {
@@ -62,14 +55,17 @@ export default function Home() {
         matchesPrice
       );
     });
-    }, [search, category, price]
-  );
+  }, [search, category, price]);
 
   return (
     <main className="min-h-screen bg-gray-100">
-      <Header search={search} setSearch={setSearch} />
+      <Header
+        search={search}
+        setSearch={setSearch}
+      />
 
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 p-6">
+
         <div className="w-full lg:w-72 shrink-0">
           <Sidebar
             categories={categories}
@@ -81,8 +77,11 @@ export default function Home() {
         </div>
 
         <div className="flex-1 w-full">
-          <ProductGrid products={filteredProducts} />
+          <ProductGrid
+            products={filteredProducts}
+          />
         </div>
+
       </div>
 
       <Footer />
