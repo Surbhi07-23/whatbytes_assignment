@@ -15,7 +15,7 @@ export default function Home() {
 
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
-  const [price, setPrice] = useState(1000);
+  const [price, setPrice] = useState(600);
 
   useEffect(() => {
     const params = new URLSearchParams();
