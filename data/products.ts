@@ -24,7 +24,7 @@ export const products = [
   {
     id: 3,
     title: "Backpack",
-    price: 129,
+    price: 100,
     category: "Clothing",
     brand: "Adidas",
     rating: 4.1,
@@ -35,7 +35,7 @@ export const products = [
   {
     id: 4,
     title: "Smartwatch",
-    price: 249,
+    price: 149,
     category: "Electronics",
     brand: "Apple",
     rating: 4.5,
@@ -46,7 +46,7 @@ export const products = [
   {
     id: 5,
     title: "Sunglasses",
-    price: 149,
+    price: 99,
     category: "Clothing",
     brand: "RayBan",
     rating: 4.2,
@@ -57,7 +57,7 @@ export const products = [
   {
     id: 6,
     title: "Digital Camera",
-    price: 499,
+    price: 399,
     category: "Electronics",
     brand: "Canon",
     rating: 4.7,
@@ -79,7 +79,7 @@ export const products = [
   {
     id: 8,
     title: "Smartphone",
-    price: 699,
+    price: 479,
     category: "Electronics",
     brand: "Apple",
     rating: 4.4,

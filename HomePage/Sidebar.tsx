@@ -53,7 +53,7 @@ export default function Sidebar({
       <input
         type="range"
         min={0}
-        max={1000}
+        max={500}
         value={price}
         onChange={(e) => setPrice(Number(e.target.value))}
         className="w-full"

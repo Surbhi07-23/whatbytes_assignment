@@ -44,6 +44,27 @@ export default function Home() {
     }, [search, category, price, router]
   );
 
+  const filteredProducts = useMemo(() => {
+    return products.filter((product) => {
+      const matchesSearch =
+        product.title.toLowerCase().includes(search.toLowerCase()) ||
+        product.brand.toLowerCase().includes(search.toLowerCase()) ||
+        product.category.toLowerCase().includes(search.toLowerCase());
+
+      const matchesCategory =
+        category === "All" || product.category === category;
+
+      const matchesPrice = product.price <= price;
+
+      return (
+        matchesSearch &&
+        matchesCategory &&
+        matchesPrice
+      );
+    });
+    }, [search, category, price]
+  );
+
   return (
     <main className="min-h-screen bg-gray-100">
       <Header search={search} setSearch={setSearch} />
