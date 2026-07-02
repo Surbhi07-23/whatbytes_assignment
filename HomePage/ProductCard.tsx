@@ -1,12 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import { Product } from "@/types/product";
 import { Star } from "lucide-react";
+
+import { useCart } from "@/context/CartContext";
 
 interface ProductCardProps {
   product: Product;
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+  const { addToCart } = useCart();
   return (
     <Link href={`/products/${product.id}`}>
       <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 flex flex-col cursor-pointer h-full">
@@ -49,10 +54,13 @@ export default function ProductCard({ product }: ProductCardProps) {
             </span>
 
             <button
-              onClick={(e) => e.preventDefault()}
-              className="bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-800"
+              onClick={(e) => {
+                e.preventDefault();
+                addToCart(product);
+              }}
+              className="mt-4 bg-blue-700 hover:bg-blue-800 text-white py-2 rounded-lg transition cursor-pointer"
             >
-              Add
+              Add to Cart
             </button>
 
           </div>

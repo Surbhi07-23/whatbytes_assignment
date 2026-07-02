@@ -37,6 +37,8 @@ export function CartProvider({
   }, [cart]);
 
   function addToCart(product: Product) {
+    console.log("Adding:", product.title);
+
     setCart((prev) => {
       const existing = prev.find((item) => item.id === product.id);
 
