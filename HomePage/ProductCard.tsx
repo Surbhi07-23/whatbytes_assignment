@@ -7,7 +7,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col">
+    <div className="bg-white rounded-xl shadow-md   overflow-hidden hover:shadow-bold transition duration-300 flex flex-col">
       {/* Product Image */}
       <div className="h-56 bg-gray-100">
         <img
