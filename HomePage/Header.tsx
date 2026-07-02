@@ -23,12 +23,12 @@ export default function Header({
 
     return (
         <header className="bg-blue-700 text-white">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 px-6 py-4">
             <h1 className="text-3xl font-bold">
             Logo
             </h1>
 
-            <div className="flex items-center bg-blue-600 rounded-md px-3 py-2 w-105">
+            <div className="hidden md:flex items-center bg-blue-600 rounded-md px-3 py-2 flex-1 max-w-md mx-8">
             <Search size={18} className="mr-2" />
 
             <input

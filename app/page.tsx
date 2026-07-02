@@ -69,8 +69,8 @@ export default function Home() {
     <main className="min-h-screen bg-gray-100">
       <Header search={search} setSearch={setSearch} />
 
-      <div className="max-w-7xl mx-auto flex gap-6 p-6">
-        <div className="w-1/4">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 p-6">
+        <div className="w-full lg:w-72 shrink-0">
           <Sidebar
             categories={categories}
             category={category}
@@ -80,7 +80,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="flex-1">
+        <div className="flex-1 w-full">
           <ProductGrid products={filteredProducts} />
         </div>
       </div>

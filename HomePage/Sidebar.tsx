@@ -16,7 +16,7 @@ export default function Sidebar({
   setPrice,
 }: SidebarProps) {
   return (
-    <aside className="bg-blue-600 text-white rounded-lg p-5">
+    <aside className="bg-blue-600 text-white rounded-lg p-5 w-full">
       <h2 className="text-xl font-bold mb-5">
         Filters
       </h2>
