@@ -58,7 +58,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                 e.preventDefault();
                 addToCart(product);
               }}
-              className="mt-4 bg-blue-700 hover:bg-blue-800 text-white py-2 rounded-lg transition cursor-pointer"
+              className="mt-4 bg-blue-700 hover:bg-blue-800 text-white py-2 px-2 rounded-lg transition cursor-pointer"
             >
               Add to Cart
             </button>
